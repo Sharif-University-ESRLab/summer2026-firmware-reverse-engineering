@@ -67,6 +67,7 @@ Here are some links related to this project:
 - [EDK II](https://github.com/tianocore/edk2)
 - [ESP32 Pinout](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/)
 - [Django Documentation](https://docs.djangoproject.com/en/5.0/)
+- [Arm Cortex-M3 Processor Datasheet](https://support.arm.com/documentation/102831/latest)
 
 ## Authors
 
