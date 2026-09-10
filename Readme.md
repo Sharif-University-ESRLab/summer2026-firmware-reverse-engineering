@@ -266,6 +266,6 @@ The dynamic analysis also exposed an emulator limitation in RCC clock-status han
 ## Authors
 
 The authors of this project are:
-- **Mohammadamin Haghjou** -- Student ID: `403110585`
+- **Mohammadamin Haghjoo** -- Student ID: `403110585`
 - **Amiryousef Abdi** -- Student ID: `403106284`
 - **Parsa Adlparvar** -- Student ID: `403106302`
