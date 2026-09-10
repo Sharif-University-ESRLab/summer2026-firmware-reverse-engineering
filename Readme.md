@@ -126,13 +126,13 @@ A typical analysis workflow is:
 1. **Inspect the firmware with `strings`:**
 
    ```bash
-   strings bin.firmware
+   strings firmware.bin
    ```
 
 2. **Inspect the firmware with Binwalk:**
 
    ```bash
-   binwalk bin.firmware
+   binwalk firmware.bin
    ```
 
    A zero/empty Binwalk result is not necessarily an error for this firmware because the image is a raw memory dump without standard executable headers.
@@ -180,7 +180,13 @@ A typical analysis workflow is:
 
 7. **Continue execution** and compare the runtime path with the static control-flow reconstruction.
 
-> **Note:** During emulation, the clock initialization routine entered an infinite loop because the QEMU model did not update the expected RCC readiness flags. The analysis therefore required manually advancing execution past the affected clock-status checks in GDB before continuing with the remaining validation.
+   **Note:** During emulation, the clock initialization routine entered an infinite loop because the QEMU model did not update the expected RCC readiness flags. The analysis therefore required manually advancing execution past the affected clock-status checks in GDB before continuing with the remaining validation.
+   ```gdb
+   set $pc = 0x08000bd0     // End of HSI
+   set $pc = 0x08000b7a     // End of HSE
+   set $pc = 0x08000b98     // End of PLL
+   set $pc = 0x08000baa     // End of SWS
+   ```
 
 ## Results
 
